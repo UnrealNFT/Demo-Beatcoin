@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatcoin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+   
+
+  </style>
+
+</head>
+    <header>
+        <div class="wrapper">
+            <img class="logo" src="logo.webp" alt="Beatcoin Logo">
+
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+      
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="BeatcoinPlaylist.html">PLAYLIST</a></li>
+                    <li><a href="beatgen.html">Generator</a></li> <!-- Lien vers beatgen.html -->
+                    <li><a href="mkrplcebody.html">Marketplace</a></li>
+                    <li><a href="#interface">Post</a></li>
+            
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<body>
+
+        <header>
+            <div class="wrapper">
+
+        <nav>
+            <form>
+                <div class="search-icon">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <input type="search" placeholder="Search" aria-label="Search">
+                </div>
+                <label class="switch">
+                    <input id="checkbox" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </form>
+            <a href="#" class="profile"><img src="https://yudiz.com/codepen/nft-store/user-pic1.svg" alt="user-image">Johny B</a>
+            <a href="#" class="notification"><i class="fa fa-bell" aria-hidden="true"></i></a>
+        </nav>
+    
+        <div class="nft-store">
+            <div class="nft-store-inner">
+                <div class="nft-store-content">
+                    <div class="music-nft">
+                        <img src="https://yudiz.com/codepen/nft-store/image-1.svg" alt="music-image">
+                        <audio controls>
+                            <source src="minai2.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <div class="music-details">
+                            <h3>Yako - Title 1</h3>
+                            <div class="music-time">
+                                <div class="current-price">
+                                    <h4>Current Price</h4>
+                                    <span>100 Nibi or 50 Beatcoin</span>
+                                </div>
+                                <div class="auction">
+                                    <h4>Auction Ending in</h4>
+                                    <span>07h:25m:46s</span>
+                                </div>
+                            </div>
+                            <span class="artist-name"><img src="https://yudiz.com/codepen/nft-store/user-pic1.svg" alt="artist-image"> Yako</span>
+                            <div class="music-actions">
+                                <a href="#" class="heart"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Favorites</a>
+                                <a href="#" class="buy-btn" onclick="showPurchaseOptions('Yako - Title 1')">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Ajoutez d'autres éléments de musique ici -->
+    
+                    <div class="trending">
+                        <div class="trending-title">
+                            <h2>Trending Songs</h2>
+                            <div>
+                                <h5>Current Price</h5>
+                                <span>100 Nibi or 50 Beatcoin</span>
+                            </div>
+                            <div>
+                                <h5>Auction Ending in</h5>
+                                <span>05h:25m:46s</span>
+                            </div>
+                            <span class="artist-name"><img src="https://yudiz.com/codepen/nft-store/user-pic1.svg" alt="artist-image"> Artist Name</span>
+                            <div class="music-actions">
+                                <a href="#" class="heart"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Favorites</a>
+                                <a href="#" class="buy-btn">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <footer>
+            <!-- Pied de page -->
+        </footer>
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+        <script>
+            function showPurchaseOptions(songTitle) {
+                const choice = confirm(`Do you want to buy "${songTitle}" with Nibi or Beatcoin?`);
+                if (choice) {
+                    alert(`You have purchased "${songTitle}" with Nibi`);
+                } else {
+                    alert(`You have purchased "${songTitle}" with Beatcoin`);
+                }
+            }
+        </script>
+    </body>

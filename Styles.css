@@ -1,0 +1,393 @@
+/* CSS Variables */
+:root {
+    --primary: #242424; /* Noir */
+    --dark: #1a1a1a; /* Noir plus foncé */
+    --light: #a0a0a0; /* Gris clair */
+    --shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Ombre plus prononcée */
+}
+
+/* Global Styles */
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jura', sans-serif; /* Police Jura */
+    color: var(--light); /* Écriture grise */
+}
+
+body {
+  
+
+  
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family: 'Jura', sans-serif;
+    text-align: center;
+    background: #333333;
+    
+}
+
+header {
+
+
+    background: var(--primary); /* Noir */
+    color: var(--light); /* Gris clair */
+    padding: 20px;
+    margin-bottom: 30px;
+   
+    text-align: center;
+  
+
+}
+
+img {
+    max-width: 70%;
+    display: block;
+    margin: 0 auto;
+}
+
+
+
+
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Logo Styles */
+.logo {
+    max-width: 180px;
+    margin: 0 auto;
+    display: block;
+    padding: 5px;
+}
+
+/* Navigation Styles */
+.main-nav ul {
+    display: grid;
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4, 1fr);
+    overflow: hidden;
+}
+
+.main-nav a {
+    background: var(--light); /* Fond gris clair */
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--dark); /* Écriture gris foncé */
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+    font-weight: bold;
+}
+
+.main-nav a:hover {
+    background: var(--dark); /* Fond noir au survol */
+    color: var(--light); /* Écriture blanche au survol */
+}
+
+.main-nav li {
+    float: left;
+    margin-right: 10px;
+}
+
+.flag-icon {
+    width: 20px;
+    vertical-align: middle;
+}
+
+/* Styles BeatcoinPlaylist */
+
+.title,
+.caption {
+    width: 100%;
+    max-width: 854px;
+    margin: 0 auto;
+}
+
+.vid-main-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    min-width: 440px;
+    background: #fff;
+    margin: 0 auto;
+}
+
+.vid-container {
+    position: relative;
+    padding-bottom: 52%;
+    padding-top: 30px; 
+    height: 0; 
+    width: 70%;
+    float: left;
+}
+
+.vid-container iframe,
+.vid-container object,
+.vid-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 360px;
+}
+
+.vid-list-container {
+    width: 30%;
+    height: 360px;
+    overflow: hidden;
+    float: right;
+}
+
+ol#vid-list {
+    margin: 0;
+    padding: 0;
+    background: #222;
+}
+
+ol#vid-list li {
+    list-style: none;
+}
+
+ol#vid-list li a {
+    text-decoration: none;
+    background-color: #222;
+    height: 55px;
+    display: block;
+    padding: 10px;
+}
+
+ol#vid-list li a:hover {
+    background-color: #1a1a1a;
+}
+
+.vid-thumb {
+    float: left;
+    margin-right: 8px;
+}
+
+.active-vid { 
+    background: #3A3A3A;
+}
+
+#vid-list .desc {
+    color: #CACACA;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+@media (max-width: 624px) {
+    body {
+        margin: 15px;
+    }
+    .caption {
+        margin-top: 40px;
+    }
+    .vid-list-container {
+        padding-bottom: 20px;
+    }
+}
+
+/* Styles Mktplce */
+
+/* Barre de recherche */
+.search-icon {
+    position: relative;
+    margin-right: 20px;
+}
+
+.search-icon input[type="search"] {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    outline: none;
+    font-size: 14px;
+}
+
+.heart,
+.buy-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.heart {
+    background-color: #ff5c5c;
+}
+
+.buy-btn {
+    background-color: #1db954;
+}
+
+/* Conteneur pour les morceaux tendance */
+.trending {
+  background-color: #030303;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 854px; /* Ajout d'une largeur maximale */
+  display: flex;
+  justify-content: center; /* Centrer horizontalement */
+  align-items: center; /* Centrer verticalement */
+}
+
+/* Titre des morceaux tendance */
+.trending-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.trending-title h2 {
+  margin: 0;
+}
+
+/* BeatcoinPlayer */
+
+.music__player {
+    background-color: #636363;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    max-width: 350px;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Style des contrôles */
+.music__controller {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.music__btn {
+    background-color: #474747;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    margin: 10px;
+    padding: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.music__btn:hover {
+    background-color: #523030;
+}
+
+/* Style des icônes */
+.fa {
+    color: #a8a8a8;
+}
+
+.music__name {
+    flex: 1;
+}
+
+.music__title {
+    margin: 0;
+}
+
+.music__description {
+    color: #777;
+    font-size: 14px;
+}
+
+.music__mixin {
+    display: flex;
+}
+
+.music__repeat,
+.music__shuffle,
+.music__playlist_open {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.music__repeat:hover,
+.music__shuffle:hover,
+.music__playlist_open:hover {
+    color: #333;
+}
+
+/* Barre de volume */
+.music__volume {
+    display: flex;
+    align-items: center;
+}
+
+.volume__button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Barre de progression de la durée */
+.music__times {
+    display: flex;
+    align-items: center;
+}
+
+.bar--duration,
+.bar--volume {
+    background-color: #570d0d;
+    border-radius: 5px;
+    height: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.music__seek_handle,
+.music__volume_handle {
+    background-color: #3041d6;
+    border-radius: 50%;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+}
+
+/* Image de la pochette */
+.music__cover {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.music__image {
+    border-radius: 10px;
+    max-width: 10%;
+}
+
+/* Réduire la taille de l'image de la musique */
+.music__controller img {
+    width: 50px;
+    height: 50px;
+}

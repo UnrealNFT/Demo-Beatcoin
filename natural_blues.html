@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music Player</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+/* BeatcoinPlayer */
+
+/* Style du lecteur audio */
+
+</style>
+</head>
+
+<body>
+  <div id="music-player" class="music music__player animate__slideInDown player">
+    <audio id="music-audio1" src="minai2.mp3" preload="metadata" volume="0.5"></audio>
+                              <img src="minai.jpg" alt="music-image">
+                              <div class="music__controller">
+                                <button id="music-action" title="play" class="music__btn music__btn--play button--action">
+                                  <i class="fa fa-play"></i>
+                                </button>
+        <div class="music__name">
+          <h3 id="Artist" class="music__title">Djaf</h3>
+          
+          <body id="music-title" class="music__title">Natural Blues</body>
+          <span id="music-desc" class="music__description">Minai</span>
+        </div>
+      
+          <input type="range" id="volume-control" class="volume__control" min="0" max="1" step="0.01" value="0.5">
+        </div>
+        <div class="music__times duration">
+          <div id="music-seek" class="music__seek bar--duration">
+            <span class="music__seek_handle"></span>
+          </div>
+          <div class="music__volume volume" title="50%">
+          <span id="music-current-time" class="music__current_time duration__current">00:00:00</span>
+       
+      <div class="music__cover"></div>
+    </div>
+  </div>
+
+  <div class="music-actions">
+
+  </div>
+  <a href="#" class="heart"><i class="fa fa-heart-o" aria-hidden="true"></i> Add to Favorites</a>
+    <h3 id="Price" class="Price_class">23 $BEATC</h3>
+
+    <a href="#" class="buy-btn">Buy Now</a>
+
+
+  <script>
+    // Récupérer les éléments audio individuellement
+    const musicAudio = document.getElementById('music-audio1');
+    const musicAction = document.getElementById('music-action');
+    const musicSeek = document.getElementById('music-seek');
+    const musicSeekHandle = document.querySelector('.music__seek_handle');
+    const musicCurrentTime = document.getElementById('music-current-time');
+    const musicDuration = document.getElementById('music-duration');
+    const volumeControl = document.getElementById('volume-control');
+
+    // Fonction pour jouer ou mettre en pause une piste audio
+    function toggleAudioPlay() {
+      if (musicAudio.paused) {
+        musicAudio.play();
+      } else {
+        musicAudio.pause();
+      }
+    }
+
+    // Associer la fonction de lecture/arrêt à la piste audio au clic sur le bouton de lecture
+    musicAction.addEventListener('click', function() {
+      toggleAudioPlay();
+    });
+
+    // Mettre à jour la durée de la piste
+    musicAudio.addEventListener('loadedmetadata', function() {
+      const duration = formatTime(musicAudio.duration);
+      musicDuration.textContent = duration;
+    });
+
+    // Fonction pour mettre à jour la barre de progression
+    function updateProgress() {
+      const progress = (musicAudio.currentTime / musicAudio.duration) * 100;
+      musicSeekHandle.style.left = progress + '%';
+      musicCurrentTime.textContent = formatTime(musicAudio.currentTime);
+    }
+
+    // Mettre à jour la barre de progression lors de la lecture de la piste
+    musicAudio.addEventListener('timeupdate', function() {
+      updateProgress();
+    });
+
+    // Fonction pour changer la position de lecture
+    function setProgress(e) {
+      const width = musicSeek.clientWidth;
+      const clickX = e.offsetX;
+      const duration = musicAudio.duration;
+      musicAudio.currentTime = (clickX / width) * duration;
+    }
+
+    // Écouteur d'événements pour changer la position de lecture en cliquant sur la barre de progression
+    musicSeek.addEventListener('click', function(e) {
+      setProgress(e);
+    });
+
+    // Écouteur d'événements pour changer la position de lecture en faisant glisser la poignée de la barre de progression
+    musicSeekHandle.addEventListener('mousedown', function(e) {
+      let isDragging = true;
+      window.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+          setProgress(e);
+        }
+      });
+      window.addEventListener('mouseup', function() {
+        isDragging = false;
+      });
+    });
+
+    // Fonction pour formater le temps au format HH:MM:SS
+    function formatTime(time) {
+      const hours = Math.floor(time / 3600);
+      const minutes = Math.floor((time % 3600) / 60);
+      const seconds = Math.floor(time % 60);
+      return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+    }
+
+    // Fonction pour régler le volume
+    function setVolume(volume) {
+      musicAudio.volume = volume;
+    }
+
+    // Régler le volume de la piste audio
+    volumeControl.addEventListener('input', function() {
+      const volume = this.value;
+      setVolume(volume);
+    });
+  </script>
+</body>
+</html>
+  </script>
+</body>
+</html>

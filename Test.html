@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beatcoin Marketplace</title>
+   
+  <style>
+    .Openview {
+      font-size: 12px;
+      padding: 2px 4px;
+      margin: 10px;
+      max-width: 135px;
+      background-color: #3d3d3d;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .Price_class {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div id="marketplace"></div>
+
+  <script> 
+    const data = [
+      {
+        image: "https://yudiz.com/codepen/nft-store/image-1.svg",
+        artist: "Djaf",
+        title: "Natural Blues",
+        description: "Minai",
+        duration: "04:12",
+        price: "23 $BEATC"
+      },
+      // Add more data objects for each music NFT
+      
+    ];
+
+    const marketplace = document.getElementById('marketplace');
+
+    data.forEach(item => {
+      const button = document.createElement('button');
+      button.className = 'Openview';
+
+      const img = document.createElement('img');
+      img.src = item.image;
+      img.alt = "music-image";
+      button.appendChild(img);
+
+      const artist = document.createElement('h3');
+      artist.textContent = item.artist;
+      button.appendChild(artist);
+
+      const title = document.createElement('h3');
+      title.textContent = item.title;
+      button.appendChild(title);
+
+      const description = document.createElement('span');
+      description.textContent = item.description;
+      button.appendChild(description);
+
+      const duration = document.createElement('h3');
+      duration.textContent = item.duration;
+      button.appendChild(duration);
+
+      const price = document.createElement('h3');
+      price.className = 'Price_class';
+      price.textContent = item.price;
+      button.appendChild(price);
+
+      marketplace.appendChild(button);
+    });
+
+    // Ajouter l'écouteur de clic après avoir créé tous les boutons
+    const buttons = document.querySelectorAll('.Openview');
+    buttons.forEach(button => {
+      button.addEventListener('click', function() {
+        window.location.href = 'beatcoinplayer.html';
+      });
+    });
+
+
+// Charger le fichier JSON
+fetch('music.json')
+      .then(response => response.json())
+      .then(newMusic => {
+        // Ajouter la nouvelle musique à votre tableau de données
+        data.push(newMusic);
+
+        // Mettre à jour l'affichage de la marketplace avec la nouvelle musique
+        const marketplace = document.getElementById('marketplace');
+        const button = document.createElement('button');
+        button.className = 'Openview';
+
+        const img = document.createElement('img');
+        img.src = newMusic.image;
+        img.alt = "music-image";
+        button.appendChild(img);
+
+        const artist = document.createElement('h3');
+        artist.textContent = newMusic.artiste;
+        button.appendChild(artist);
+
+        const title = document.createElement('h3');
+        title.textContent = newMusic.titre;
+        button.appendChild(title);
+
+        const description = document.createElement('span');
+        description.textContent = newMusic.description;
+        button.appendChild(description);
+
+        const duration = document.createElement('h3');
+        duration.textContent = newMusic.duree;
+        button.appendChild(duration);
+
+        const price = document.createElement('h3');
+        price.className = 'Price_class';
+        price.textContent = newMusic.prix;
+        button.appendChild(price);
+
+        marketplace.appendChild(button);
+      })
+      .catch(error => console.error('Erreur lors du chargement du fichier JSON :', error));
+
+
+  </script>
+</body>
+</html>

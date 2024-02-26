@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beatcoin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+   
+
+  </style>
+
+</head>
+    <header>
+        <div class="wrapper">
+            <img class="logo" src="logo.webp" alt="Beatcoin Logo">
+
+    
+      
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="beatgen.html">Generator</a></li> <!-- Lien vers beatgen.html -->
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="Publish.html">Publish</a></li>
+            
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="main-content container">
+        <label for="tempo-range">Tempo (80 - 160): <span id="tempo-value">120</span></label>
+        <input type="range" id="tempo-range" min="80" max="160" value="120"><br>
+
+        <label for="note-select">Choisir une note:</label>
+        <select id="note-select">
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <!-- Ajoutez d'autres options pour les notes -->
+        </select><br>
+
+        <label for="length-range">Longueur de la musique (10 - 180 sec): <span id="length-value">60</span></label>
+        <input type="range" id="length-range" min="10" max="180" value="60"><br>
+
+        <label for="style-select">Choisir un style de musique:</label>
+        <select id="style-select">
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Hip Hop">Hip Hop</option>
+            <option value="Electronic">Electronic</option>
+            <!-- Ajoutez d'autres options pour les styles de musique -->
+        </select><br>
+
+        <button id="generate-button">Générer la musique</button>
+    </main>
+
+    <iframe src="https://beat.html" allow="autoplay"></iframe>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</html>

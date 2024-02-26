@@ -1,0 +1,23 @@
+[
+  {
+    "image": "fl951.jpg",
+    "artiste": "Yako",
+    "titre": "FL951",
+    "description": "Beat",
+    "duree": "03:07",
+    "prix": "75 $NIBI",
+     "audio": "Fl951.html" 
+  },
+  {
+    "image": "minai.JPG",
+    "artiste": "Djaf",
+    "titre": "Natural Blues",
+    "description": "Music",
+    "duration": "02:49",
+    "prix": "23 $BEATC",
+    "audio": "Natural_blues.html"
+}
+]
+
+
+

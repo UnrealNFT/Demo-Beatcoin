@@ -1,0 +1,87 @@
+
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Jura&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Beatcoin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <img class="logo" src="logo.webp" alt="Beatcoin Logo">
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="beatgen.html">Generator</a></li>
+                    <li><a href="marketplace.html">Marketplace</a></li>
+                    <li><a href="Publish.html">Publish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+    <body>
+        <h2>Publish Your Song</h2>
+        <form action="publish_song.php" method="post" enctype="multipart/form-data">
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title" required><br>
+    
+            <label for="artist_name">Artist Name:</label><br>
+            <input type="text" id="artist_name" name="artist_name" required><br>
+    
+            <label for="album">Album:</label><br>
+            <input type="text" id="album" name="album"><br>
+    
+            <!-- Champ de saisie de la durée caché -->
+            <input type="hidden" id="duration" name="duration">
+    
+            <label for="style">Style:</label><br>
+            <input type="text" id="style" name="style" required><br>
+    
+            <label for="price">Price:</label><br>
+            <input type="text" id="price" name="price" required><br>
+    
+            <label for="currency">Currency:</label><br>
+            <select id="currency" name="currency" required>
+                <option value="Beatc">$Beatc</option>
+                <option value="NIBI">$NIBI</option>
+            </select><br>
+    
+            <label for="file">Select file:</label><br>
+            <input type="file" id="file" name="file" required onchange="calculateDuration()"><br><br>
+    
+            <input type="submit" value="Publish">
+        </form>
+    </body>
+    
+    <script>
+        function calculateDuration() {
+            var fileInput = document.getElementById('file');
+            var durationInput = document.getElementById('duration');
+    
+            var file = fileInput.files[0];
+            var objectUrl = URL.createObjectURL(file);
+            
+            var audio = new Audio();
+            audio.src = objectUrl;
+    
+            audio.onloadedmetadata = function() {
+                var duration = audio.duration;
+                var minutes = Math.floor(duration / 60);
+                durationInput.value = minutes;
+            };
+        }
+    </script>
+    </html>
+    </html>
+
+</html>
